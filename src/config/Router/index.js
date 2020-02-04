@@ -3,6 +3,7 @@ import { createStackNavigator } from 'react-navigation-stack'
 import { createAppContainer } from 'react-navigation'
 import Home from '../../container/pages/Home'
 import DetailSurah from '../../container/pages/DetailSurah'
+import InfoSurah from '../../container/pages/InfoSurah'
 
 const Router = createStackNavigator(
   {
@@ -11,6 +12,9 @@ const Router = createStackNavigator(
     },
     DetailSurah: {
       screen: DetailSurah
+    },
+    InfoSurah: {
+      screen: InfoSurah
     }
   },
   {

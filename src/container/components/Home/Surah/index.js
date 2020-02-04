@@ -977,7 +977,7 @@ const Surah = (props) => {
         return (
           <>
             <TouchableOpacity style={styles.surahList} key={item.number}
-             onPress={() => navigate('DetailSurah', {
+             onPress={() => navigate('InfoSurah', {
                id: item.number,
                name: item.englishName
              })}>

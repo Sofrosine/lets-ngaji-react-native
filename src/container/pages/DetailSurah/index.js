@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, ScrollView, ActivityIndicator} from 'react-native';
+import {Text, View, ScrollView, ActivityIndicator, TouchableOpacity} from 'react-native';
 import styles from './style'
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { useNavigationParam } from 'react-navigation-hooks';
+import { useNavigationParam, useNavigation } from 'react-navigation-hooks';
 
 const defaultSurah = {
   data: [],
@@ -41,14 +41,16 @@ const DetailSurah = () => {
     fetchData();
   }, [limit]);
 
-  console.log('aslkjdl', surah)
-
+  // console.log('aslkjdl', surah)
+  const navigation = useNavigation();
   return (
     <>
       <View style={styles.container}>
         <View style={styles.navbar}>
           <View style={styles.navbarTextContainer}>
-            <Icon style={styles.navbarIcon} name="chevron-left" size={20} />
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Icon style={styles.navbarIcon} name="chevron-left" size={20} />
+            </TouchableOpacity>
             <Text style={styles.navbarName}>{nameSurah}</Text>
             <Icon style={styles.navbarIcon} name="search" size={20} />
           </View>
@@ -61,7 +63,9 @@ const DetailSurah = () => {
               <>
                 <View style={styles.ayahsList}>
                   <View style={styles.ayahsArabContainer}>
-                    <Text style={styles.ayahs}>{idSurah}:{item.nomor}</Text>
+                    <Text style={styles.ayahs}>
+                      {idSurah}:{item.nomor}
+                    </Text>
                     <Text style={styles.arabicText}>{item.ar}</Text>
                   </View>
                   <View style={styles.latinTextContainer}>
