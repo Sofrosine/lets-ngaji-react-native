@@ -4,6 +4,7 @@ import {StyleSheet} from 'react-native';
 module.exports = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:'#F1EEE5'
   },
   headerContainer: {
     flex: 0.3,

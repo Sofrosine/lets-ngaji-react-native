@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Text, View, TouchableOpacity, ScrollView} from 'react-native';
+import {Text, View, TouchableOpacity, ScrollView, FlatList} from 'react-native';
 import styles from './style';
 import AsyncStorage from '@react-native-community/async-storage';
 import { useNavigation } from 'react-navigation-hooks';
@@ -991,6 +991,18 @@ const Surah = (props) => {
               <Text style={styles.surahListNameArab}>{item.name}</Text>
             </TouchableOpacity>
             <View style={styles.surahDivider}></View>
+            {/* <View>
+              <FlatList
+              data={surah[0].data}
+              renderItem={({item, index}) => {
+                // console.log(`item= ${JSON.stringify(item)}, index = ${index}`)
+                return (
+                  <Flatlist
+                )
+              }}>
+
+              </FlatList>
+            </View> */}
           </>
         )
       })}
